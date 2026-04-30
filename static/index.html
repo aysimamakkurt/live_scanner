@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>YOLO Live Camera Aysima</title>
+
+  <style>
+    :root {
+      --bg: #0f1412;
+      --panel: rgba(12, 20, 17, 0.92);
+      --panel-border: rgba(102, 255, 191, 0.16);
+      --accent: #54f2a5;
+      --accent-strong: #17c67b;
+      --text: #ecfff4;
+      --muted: #9eb8aa;
+      --danger: #ff7a7a;
+    }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at top, rgba(47, 154, 104, 0.20), transparent 34%),
+        linear-gradient(180deg, #0c120f 0%, #121a16 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 24px;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--text);
+    }
+
+    .app-shell {
+      width: min(1180px, 100%);
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);
+      gap: 22px;
+      align-items: start;
+    }
+
+    .camera-panel, .capture-panel {
+      background: var(--panel);
+      border: 1px solid var(--panel-border);
+      border-radius: 28px;
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+      backdrop-filter: blur(14px);
+    }
+
+    .camera-panel {
+      padding: 18px;
+    }
+
+    .camera-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+
+    .camera-header h1 {
+      margin: 0;
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .status {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .camera-wrapper {
+      position: relative;
+      width: 100%;
+    }
+
+    video, canvas {
+      width: 100%;
+      border-radius: 24px;
+      display: block;
+    }
+
+    canvas {
+      position: absolute;
+      left: 0;
+      top: 0;
+      pointer-events: none;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      border: 0;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 100%);
+      color: #062213;
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 14px 22px;
+      cursor: pointer;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
+      box-shadow: 0 14px 30px rgba(23, 198, 123, 0.22);
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+    }
+
+    button:disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .helper-text {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .capture-panel {
+      padding: 18px;
+    }
+
+    .capture-panel h2 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+    }
+
+    .capture-panel p {
+      margin: 0 0 18px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .preview-card {
+      margin-bottom: 16px;
+    }
+
+    .preview-card span {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .preview-frame {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background:
+        linear-gradient(135deg, rgba(84, 242, 165, 0.12), rgba(23, 198, 123, 0.05)),
+        rgba(255, 255, 255, 0.02);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      color: var(--muted);
+      text-align: center;
+      padding: 12px;
+      box-sizing: border-box;
+    }
+
+    .preview-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: none;
+    }
+
+    .preview-frame.has-image img {
+      display: block;
+    }
+
+    .preview-frame.has-image .placeholder {
+      display: none;
+    }
+
+    .capture-note {
+      min-height: 24px;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    .capture-note.error {
+      color: var(--danger);
+    }
+
+    @media (max-width: 960px) {
+      .app-shell {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="app-shell">
+    <section class="camera-panel">
+      <div class="camera-header">
+        <h1>YOLO Live Camera Aysima</h1>
+        <div id="status" class="status">Camera is starting...</div>
+      </div>
+
+      <div class="camera-wrapper">
+        <video id="video" autoplay playsinline></video>
+        <canvas id="overlay"></canvas>
+      </div>
+
+      <div class="controls">
+        <button id="captureButton" type="button" disabled>Fotograf Cek ve Kirp</button>
+        <div class="helper-text">Belge sinirlari canli gorunur. Cekim aninda ayni sinirlardan warp alinir.</div>
+      </div>
+    </section>
+
+    <aside class="capture-panel">
+      <h2>Capture Preview</h2>
+      <p>Cekilen tam kare ve belgeye gore warp edilmis sonuc burada gorunecek.</p>
+
+      <div class="preview-card">
+        <span>Tam kare</span>
+        <div class="preview-frame" id="fullFramePreview">
+          <img id="fullFrameImage" alt="Captured full frame" />
+          <div class="placeholder">Henuz fotograf cekilmedi.</div>
+        </div>
+      </div>
+
+      <div class="preview-card">
+        <span>Warp sonucu</span>
+        <div class="preview-frame" id="croppedPreview">
+          <img id="croppedImage" alt="Cropped detection" />
+          <div class="placeholder">Belge algilandiginda warp sonucu burada gorunecek.</div>
+        </div>
+      </div>
+
+      <div id="captureNote" class="capture-note"></div>
+    </aside>
+  </div>
+
+  <script>
+    const video = document.getElementById("video");
+    const overlay = document.getElementById("overlay");
+    const ctx = overlay.getContext("2d");
+    const captureButton = document.getElementById("captureButton");
+    const statusText = document.getElementById("status");
+    const captureNote = document.getElementById("captureNote");
+    const fullFramePreview = document.getElementById("fullFramePreview");
+    const fullFrameImage = document.getElementById("fullFrameImage");
+    const croppedPreview = document.getElementById("croppedPreview");
+    const croppedImage = document.getElementById("croppedImage");
+
+    let isProcessing = false;
+    let lastDetections = [];
+
+    async function startCamera() {
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({
+          video: {
+            facingMode: "environment"
+          },
+          audio: false
+        });
+
+        video.srcObject = stream;
+
+        video.onloadedmetadata = () => {
+          overlay.width = video.videoWidth;
+          overlay.height = video.videoHeight;
+          captureButton.disabled = false;
+          statusText.textContent = "Camera is ready";
+        };
+      } catch (error) {
+        statusText.textContent = "Camera access failed";
+        captureNote.textContent = "Kamera izni olmadan fotograf cekilemez.";
+        captureNote.classList.add("error");
+        console.error("Camera error:", error);
+      }
+    }
+
+    function drawPolygon(points) {
+      if (!points || points.length < 2) {
+        return;
+      }
+
+      ctx.beginPath();
+      ctx.moveTo(points[0][0], points[0][1]);
+
+      for (let i = 1; i < points.length; i += 1) {
+        ctx.lineTo(points[i][0], points[i][1]);
+      }
+
+      ctx.closePath();
+      ctx.stroke();
+    }
+
+    function drawDetections(detections) {
+      ctx.clearRect(0, 0, overlay.width, overlay.height);
+
+      ctx.lineWidth = 5;
+      ctx.strokeStyle = "#00ff88";
+      ctx.fillStyle = "#00ff88";
+      ctx.font = "24px Arial";
+
+      detections.forEach(det => {
+        const quad = det.quad ?? [];
+        const polygon = det.polygon ?? quad;
+        const anchor = polygon[0] ?? quad[0];
+
+        drawPolygon(quad.length ? quad : polygon);
+
+        const text = `${det.label} ${(det.confidence * 100).toFixed(1)}%`;
+        if (anchor) {
+          ctx.fillText(text, anchor[0], Math.max(anchor[1] - 10, 25));
+        }
+      });
+    }
+
+    function setPreviewImage(wrapper, image, src) {
+      image.src = src;
+      wrapper.classList.add("has-image");
+    }
+
+    function setCaptureMessage(message, isError = false) {
+      captureNote.textContent = message;
+      captureNote.classList.toggle("error", isError);
+    }
+
+    function getBestDetection(detections) {
+      if (!detections.length) {
+        return null;
+      }
+
+      return detections.reduce((best, current) => {
+        if (!best) {
+          return current;
+        }
+
+        return current.confidence > best.confidence ? current : best;
+      }, null);
+    }
+
+    function clamp(value, min, max) {
+      return Math.min(Math.max(value, min), max);
+    }
+
+    async function sendFrame() {
+      if (isProcessing || video.videoWidth === 0) {
+        return;
+      }
+
+      isProcessing = true;
+
+      const tempCanvas = document.createElement("canvas");
+      tempCanvas.width = video.videoWidth;
+      tempCanvas.height = video.videoHeight;
+
+      const tempCtx = tempCanvas.getContext("2d");
+      tempCtx.drawImage(video, 0, 0);
+
+      tempCanvas.toBlob(async (blob) => {
+        const formData = new FormData();
+        formData.append("file", blob, "frame.jpg");
+
+        try {
+          const response = await fetch("/detect-frame", {
+            method: "POST",
+            body: formData
+          });
+
+          const data = await response.json();
+
+          if (data.success) {
+            lastDetections = data.detections ?? [];
+            drawDetections(data.detections);
+            statusText.textContent = lastDetections.length
+              ? `${lastDetections.length} detection found`
+              : "No detection";
+          }
+        } catch (error) {
+          console.error("Detection error:", error);
+          statusText.textContent = "Detection request failed";
+        }
+
+        isProcessing = false;
+      }, "image/jpeg", 0.8);
+    }
+
+    async function capturePhoto() {
+      if (video.videoWidth === 0) {
+        setCaptureMessage("Kamera hazir degil.", true);
+        return;
+      }
+
+      captureButton.disabled = true;
+      setCaptureMessage("Belge isleniyor...");
+
+      const frameCanvas = document.createElement("canvas");
+      frameCanvas.width = video.videoWidth;
+      frameCanvas.height = video.videoHeight;
+
+      const frameCtx = frameCanvas.getContext("2d");
+      frameCtx.drawImage(video, 0, 0);
+
+      setPreviewImage(fullFramePreview, fullFrameImage, frameCanvas.toDataURL("image/jpeg", 0.95));
+
+      const captureBlob = await new Promise((resolve) => frameCanvas.toBlob(resolve, "image/jpeg", 0.95));
+      if (!captureBlob) {
+        setCaptureMessage("Fotograf blob olarak hazirlanamadi.", true);
+        captureButton.disabled = false;
+        return;
+      }
+
+      const formData = new FormData();
+      formData.append("file", captureBlob, "capture.jpg");
+
+      try {
+        const response = await fetch("/capture-document", {
+          method: "POST",
+          body: formData
+        });
+
+        const data = await response.json();
+
+        if (!data.success) {
+          setCaptureMessage(data.error || "Belge warp islemi basarisiz.", true);
+          return;
+        }
+
+        if (data.detection) {
+          lastDetections = [data.detection];
+          drawDetections(lastDetections);
+        }
+
+        setPreviewImage(croppedPreview, croppedImage, data.warped_image);
+        setCaptureMessage(
+          `${data.detection.label} icin warp olusturuldu (${(data.detection.confidence * 100).toFixed(1)}%).`
+        );
+      } catch (error) {
+        console.error("Capture error:", error);
+        setCaptureMessage("Capture sirasinda sunucu hatasi olustu.", true);
+      } finally {
+        captureButton.disabled = false;
+      }
+    }
+
+    startCamera();
+    captureButton.addEventListener("click", capturePhoto);
+
+    // Send 3 frames per second
+    setInterval(sendFrame, 333);
+  </script>
+</body>
+</html>
