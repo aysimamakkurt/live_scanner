@@ -218,28 +218,28 @@
       </div>
 
       <div class="controls">
-        <button id="captureButton" type="button" disabled>Fotograf Cek ve Kirp</button>
-        <div class="helper-text">Belge sinirlari canli gorunur. Cekim aninda ayni sinirlardan warp alinir.</div>
+        <button id="captureButton" type="button" disabled>Capture and Warp</button>
+        <div class="helper-text">Document boundaries are shown live. The captured frame is warped using those same boundaries.</div>
       </div>
     </section>
 
     <aside class="capture-panel">
       <h2>Capture Preview</h2>
-      <p>Cekilen tam kare ve belgeye gore warp edilmis sonuc burada gorunecek.</p>
+      <p>The captured full frame and the warped document result will appear here.</p>
 
       <div class="preview-card">
-        <span>Tam kare</span>
+        <span>Full frame</span>
         <div class="preview-frame" id="fullFramePreview">
           <img id="fullFrameImage" alt="Captured full frame" />
-          <div class="placeholder">Henuz fotograf cekilmedi.</div>
+          <div class="placeholder">No photo captured yet.</div>
         </div>
       </div>
 
       <div class="preview-card">
-        <span>Warp sonucu</span>
+        <span>Warp result</span>
         <div class="preview-frame" id="croppedPreview">
           <img id="croppedImage" alt="Cropped detection" />
-          <div class="placeholder">Belge algilandiginda warp sonucu burada gorunecek.</div>
+          <div class="placeholder">The warped result will appear here when a document is detected.</div>
         </div>
       </div>
 
@@ -281,7 +281,7 @@
         };
       } catch (error) {
         statusText.textContent = "Camera access failed";
-        captureNote.textContent = "Kamera izni olmadan fotograf cekilemez.";
+        captureNote.textContent = "A camera permission is required before capturing.";
         captureNote.classList.add("error");
         console.error("Camera error:", error);
       }
@@ -397,12 +397,12 @@
 
     async function capturePhoto() {
       if (video.videoWidth === 0) {
-        setCaptureMessage("Kamera hazir degil.", true);
+        setCaptureMessage("The camera is not ready yet.", true);
         return;
       }
 
       captureButton.disabled = true;
-      setCaptureMessage("Belge isleniyor...");
+      setCaptureMessage("Processing document...");
 
       const frameCanvas = document.createElement("canvas");
       frameCanvas.width = video.videoWidth;
@@ -415,7 +415,7 @@
 
       const captureBlob = await new Promise((resolve) => frameCanvas.toBlob(resolve, "image/jpeg", 0.95));
       if (!captureBlob) {
-        setCaptureMessage("Fotograf blob olarak hazirlanamadi.", true);
+        setCaptureMessage("The captured image could not be prepared.", true);
         captureButton.disabled = false;
         return;
       }
@@ -432,7 +432,7 @@
         const data = await response.json();
 
         if (!data.success) {
-          setCaptureMessage(data.error || "Belge warp islemi basarisiz.", true);
+          setCaptureMessage(data.error || "Document warp failed.", true);
           return;
         }
 
@@ -443,11 +443,11 @@
 
         setPreviewImage(croppedPreview, croppedImage, data.warped_image);
         setCaptureMessage(
-          `${data.detection.label} icin warp olusturuldu (${(data.detection.confidence * 100).toFixed(1)}%).`
+          `Warp created for ${data.detection.label} (${(data.detection.confidence * 100).toFixed(1)}%).`
         );
       } catch (error) {
         console.error("Capture error:", error);
-        setCaptureMessage("Capture sirasinda sunucu hatasi olustu.", true);
+        setCaptureMessage("A server error occurred during capture.", true);
       } finally {
         captureButton.disabled = false;
       }
