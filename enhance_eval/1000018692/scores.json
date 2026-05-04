@@ -1,0 +1,120 @@
+{
+  "image": "samples\\1000018692.jpg",
+  "orientation": {
+    "best_angle": 90,
+    "override_reason": "Selected vertical orientation pair (90/270) from heuristic pre-check.",
+    "candidates": [
+      {
+        "angle": 90,
+        "heuristic_score": 232.59978956604004,
+        "ocr_conf": 0.0,
+        "text_len": 0,
+        "used_ocr": false,
+        "final_score": 232.59978956604004
+      },
+      {
+        "angle": 270,
+        "heuristic_score": 232.30932640838623,
+        "ocr_conf": 0.0,
+        "text_len": 0,
+        "used_ocr": false,
+        "final_score": 232.30932640838623
+      }
+    ]
+  },
+  "selected_ocr_branch": "00_original_bgr",
+  "selected_visual_branch": "11_color_strong_scan",
+  "ocr_ranking": [
+    {
+      "branch": "00_original_bgr",
+      "score": 0.0
+    },
+    {
+      "branch": "24_gray_whitened_scan",
+      "score": 0.0
+    },
+    {
+      "branch": "32_bw_shadow_adaptive",
+      "score": 0.0
+    }
+  ],
+  "visual_ranking": [
+    {
+      "branch": "11_color_strong_scan",
+      "score": 21.138242715044505
+    },
+    {
+      "branch": "00_original_bgr",
+      "score": 18.854447626601576
+    },
+    {
+      "branch": "10_color_natural_scan",
+      "score": 18.158855679011744
+    }
+  ],
+  "branch_scores": {
+    "00_original_bgr": {
+      "quick_ocr_score": 22.198947132910924,
+      "ocr_score": 0.0,
+      "ocr_metrics": {
+        "mean_conf": 0.0,
+        "text_len": 0,
+        "token_count": 0,
+        "raw_token_count": 0,
+        "valid_token_count": 0,
+        "valid_ratio": 0.0,
+        "garbage_ratio": 1.0,
+        "density_score": 0.0,
+        "length_score": 0.0,
+        "token_score": 0.0,
+        "ocr_available": false
+      },
+      "visual_score": 18.854447626601576
+    },
+    "10_color_natural_scan": {
+      "visual_score": 18.158855679011744
+    },
+    "11_color_strong_scan": {
+      "visual_score": 21.138242715044505
+    },
+    "20_gray_illumination": {},
+    "22_gray_clahe": {},
+    "24_gray_whitened_scan": {
+      "quick_ocr_score": 20.230150940803522,
+      "ocr_score": 0.0,
+      "ocr_metrics": {
+        "mean_conf": 0.0,
+        "text_len": 0,
+        "token_count": 0,
+        "raw_token_count": 0,
+        "valid_token_count": 0,
+        "valid_ratio": 0.0,
+        "garbage_ratio": 1.0,
+        "density_score": 0.0,
+        "length_score": 0.0,
+        "token_score": 0.0,
+        "ocr_available": false
+      }
+    },
+    "32_bw_shadow_adaptive": {
+      "quick_ocr_score": 37.7089405093642,
+      "ocr_score": 0.0,
+      "ocr_metrics": {
+        "mean_conf": 0.0,
+        "text_len": 0,
+        "token_count": 0,
+        "raw_token_count": 0,
+        "valid_token_count": 0,
+        "valid_ratio": 0.0,
+        "garbage_ratio": 1.0,
+        "density_score": 0.0,
+        "length_score": 0.0,
+        "token_score": 0.0,
+        "ocr_available": false
+      }
+    },
+    "90_recommended_visual": {},
+    "91_recommended_gray": {},
+    "92_recommended_ocr": {}
+  }
+}

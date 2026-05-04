@@ -1,0 +1,2173 @@
+{
+  "image_count": 18,
+  "selected_visual_counts": {
+    "11_color_strong_scan": 18
+  },
+  "selected_ocr_counts": {
+    "00_original_bgr": 18
+  },
+  "recommended_visual_branch": "11_color_strong_scan",
+  "recommended_ocr_branch": "00_original_bgr",
+  "results": [
+    {
+      "image": "samples\\1000018692.jpg",
+      "orientation": {
+        "best_angle": 90,
+        "override_reason": "Selected vertical orientation pair (90/270) from heuristic pre-check.",
+        "candidates": [
+          {
+            "angle": 90,
+            "heuristic_score": 232.59978956604004,
+            "ocr_conf": 0.0,
+            "text_len": 0,
+            "used_ocr": false,
+            "final_score": 232.59978956604004
+          },
+          {
+            "angle": 270,
+            "heuristic_score": 232.30932640838623,
+            "ocr_conf": 0.0,
+            "text_len": 0,
+            "used_ocr": false,
+            "final_score": 232.30932640838623
+          }
+        ]
+      },
+      "selected_ocr_branch": "00_original_bgr",
+      "selected_visual_branch": "11_color_strong_scan",
+      "ocr_ranking": [
+        {
+          "branch": "00_original_bgr",
+          "score": 0.0
+        },
+        {
+          "branch": "24_gray_whitened_scan",
+          "score": 0.0
+        },
+        {
+          "branch": "32_bw_shadow_adaptive",
+          "score": 0.0
+        }
+      ],
+      "visual_ranking": [
+        {
+          "branch": "11_color_strong_scan",
+          "score": 21.138242715044505
+        },
+        {
+          "branch": "00_original_bgr",
+          "score": 18.854447626601576
+        },
+        {
+          "branch": "10_color_natural_scan",
+          "score": 18.158855679011744
+        }
+      ],
+      "branch_scores": {
+        "00_original_bgr": {
+          "quick_ocr_score": 22.198947132910924,
+          "ocr_score": 0.0,
+          "ocr_metrics": {
+            "mean_conf": 0.0,
+            "text_len": 0,
+            "token_count": 0,
+            "raw_token_count": 0,
+            "valid_token_count": 0,
+            "valid_ratio": 0.0,
+            "garbage_ratio": 1.0,
+            "density_score": 0.0,
+            "length_score": 0.0,
+            "token_score": 0.0,
+            "ocr_available": false
+          },
+          "visual_score": 18.854447626601576
+        },
+        "10_color_natural_scan": {
+          "visual_score": 18.158855679011744
+        },
+        "11_color_strong_scan": {
+          "visual_score": 21.138242715044505
+        },
+        "20_gray_illumination": {},
+        "22_gray_clahe": {},
+        "24_gray_whitened_scan": {
+          "quick_ocr_score": 20.230150940803522,
+          "ocr_score": 0.0,
+          "ocr_metrics": {
+            "mean_conf": 0.0,
+            "text_len": 0,
+            "token_count": 0,
+            "raw_token_count": 0,
+            "valid_token_count": 0,
+            "valid_ratio": 0.0,
+            "garbage_ratio": 1.0,
+            "density_score": 0.0,
+            "length_score": 0.0,
+            "token_score": 0.0,
+            "ocr_available": false
+          }
+        },
+        "32_bw_shadow_adaptive": {
+          "quick_ocr_score": 37.7089405093642,
+          "ocr_score": 0.0,
+          "ocr_metrics": {
+            "mean_conf": 0.0,
+            "text_len": 0,
+            "token_count": 0,
+            "raw_token_count": 0,
+            "valid_token_count": 0,
+            "valid_ratio": 0.0,
+            "garbage_ratio": 1.0,
+            "density_score": 0.0,
+            "length_score": 0.0,
+            "token_score": 0.0,
+            "ocr_available": false
+          }
+        },
+        "90_recommended_visual": {},
+        "91_recommended_gray": {},
+        "92_recommended_ocr": {}
+      }
+    },
+    {
+      "image": "samples\\1000018693.jpg",
+      "orientation": {
+        "best_angle": 90,
+        "override_reason": "Selected vertical orientation pair (90/270) from heuristic pre-check.",
+        "candidates": [
+          {
+            "angle": 90,
+            "heuristic_score": 225.9539520263672,
+            "ocr_conf": 0.0,
+            "text_len": 0,
+            "used_ocr": false,
+            "final_score": 225.9539520263672
+          },
+          {
+            "angle": 270,
+            "heuristic_score": 225.11018714904787,
+            "ocr_conf": 0.0,
+            "text_len": 0,
+            "used_ocr": false,
+            "final_score": 225.11018714904787
+          }
+        ]
+      },
+      "selected_ocr_branch": "00_original_bgr",
+      "selected_visual_branch": "11_color_strong_scan",
+      "ocr_ranking": [
+        {
+          "branch": "00_original_bgr",
+          "score": 0.0
+        },
+        {
+          "branch": "24_gray_whitened_scan",
+          "score": 0.0
+        },
+        {
+          "branch": "32_bw_shadow_adaptive",
+          "score": 0.0
+        }
+      ],
+      "visual_ranking": [
+        {
+          "branch": "11_color_strong_scan",
+          "score": 20.5392210583238
+        },
+        {
+          "branch": "00_original_bgr",
+          "score": 18.145047535977127
+        },
+        {
+          "branch": "10_color_natural_scan",
+          "score": 17.538492374701086
+        }
+      ],
+      "branch_scores": {
+        "00_original_bgr": {
+          "quick_ocr_score": 21.155410268975665,
+          "ocr_score": 0.0,
+          "ocr_metrics": {
+            "mean_conf": 0.0,
+            "text_len": 0,
+            "token_count": 0,
+            "raw_token_count": 0,
+            "valid_token_count": 0,
+            "valid_ratio": 0.0,
+            "garbage_ratio": 1.0,
+            "density_score": 0.0,
+            "length_score": 0.0,
+            "token_score": 0.0,
+            "ocr_available": false
+          },
+          "visual_score": 18.145047535977127
+        },
+        "10_color_natural_scan": {
+          "visual_score": 17.538492374701086
+        },
+        "11_color_strong_scan": {
+          "visual_score": 20.5392210583238
+        },
+        "20_gray_illumination": {},
+        "22_gray_clahe": {},
+        "24_gray_whitened_scan": {
+          "quick_ocr_score": 23.212708541741897,
+          "ocr_score": 0.0,
+          "ocr_metrics": {
+            "mean_conf": 0.0,
+            "text_len": 0,
+            "token_count": 0,
+            "raw_token_count": 0,
+            "valid_token_count": 0,
+            "valid_ratio": 0.0,
+            "garbage_ratio": 1.0,
+            "density_score": 0.0,
+            "length_score": 0.0,
+            "token_score": 0.0,
+            "ocr_available": false
+          }
+        },
+        "32_bw_shadow_adaptive": {
+          "quick_ocr_score": 37.64740207674766,
+          "ocr_score": 0.0,
+          "ocr_metrics": {
+            "mean_conf": 0.0,
+            "text_len": 0,
+            "token_count": 0,
+            "raw_token_count": 0,
+            "valid_token_count": 0,
+            "valid_ratio": 0.0,
+            "garbage_ratio": 1.0,
+            "density_score": 0.0,
+            "length_score": 0.0,
+            "token_score": 0.0,
+            "ocr_available": false
+          }
+        },
+        "90_recommended_visual": {},
+        "91_recommended_gray": {},
+        "92_recommended_ocr": {}
+      }
+    },
+    {
+      "image": "samples\\1000018694.jpg",
+      "orientation": {
+        "best_angle": 270,
+        "override_reason": "Selected vertical orientation pair (90/270) from heuristic pre-check.",
+        "candidates": [
+          {
+            "angle": 90,
+            "heuristic_score": 234.81101684570314,
+            "ocr_conf": 0.0,
+            "text_len": 0,
+            "used_ocr": false,
+            "final_score": 234.81101684570314
+          },
+          {
+            "angle": 270,
+            "heuristic_score": 236.95107650756836,
+            "ocr_conf": 0.0,
+            "text_len": 0,
+            "used_ocr": false,
+            "final_score": 236.95107650756836
+          }
+        ]
+      },
+      "selected_ocr_branch": "00_original_bgr",
+      "selected_visual_branch": "11_color_strong_scan",
+      "ocr_ranking": [
+        {
+          "branch": "00_original_bgr",
+          "score": 0.0
+        },
+        {
+          "branch": "24_gray_whitened_scan",
+          "score": 0.0
+        },
+        {
+          "branch": "32_bw_shadow_adaptive",
+          "score": 0.0
+        }
+      ],
+      "visual_ranking": [
+        {
+          "branch": "11_color_strong_scan",
+          "score": 20.866230937891906
+        },
+        {
+          "branch": "00_original_bgr",
+          "score": 19.965292838292193
+        },
+        {
+          "branch": "10_color_natural_scan",
+          "score": 17.74518939674757
+        }
+      ],
+      "branch_scores": {
+        "00_original_bgr": {
+          "quick_ocr_score": 23.478432549080768,
+          "ocr_score": 0.0,
+          "ocr_metrics": {
+            "mean_conf": 0.0,
+            "text_len": 0,
+            "token_count": 0,
+            "raw_token_count": 0,
+            "valid_token_count": 0,
+            "valid_ratio": 0.0,
+            "garbage_ratio": 1.0,
+            "density_score": 0.0,
+            "length_score": 0.0,
+            "token_score": 0.0,
+            "ocr_available": false
+          },
+          "visual_score": 19.965292838292193
+        },
+        "10_color_natural_scan": {
+          "visual_score": 17.74518939674757
+        },
+        "11_color_strong_scan": {
+          "visual_score": 20.866230937891906
+        },
+        "20_gray_illumination": {},
+        "22_gray_clahe": {},
+        "24_gray_whitened_scan": {
+          "quick_ocr_score": 23.65325022270656,
+          "ocr_score": 0.0,
+          "ocr_metrics": {
+            "mean_conf": 0.0,
+            "text_len": 0,
+            "token_count": 0,
+            "raw_token_count": 0,
+            "valid_token_count": 0,
+            "valid_ratio": 0.0,
+            "garbage_ratio": 1.0,
+            "density_score": 0.0,
+            "length_score": 0.0,
+            "token_score": 0.0,
+            "ocr_available": false
+          }
+        },
+        "32_bw_shadow_adaptive": {
+          "quick_ocr_score": 38.15365609408199,
+          "ocr_score": 0.0,
+          "ocr_metrics": {
+            "mean_conf": 0.0,
+            "text_len": 0,
+            "token_count": 0,
+            "raw_token_count": 0,
+            "valid_token_count": 0,
+            "valid_ratio": 0.0,
+            "garbage_ratio": 1.0,
+            "density_score": 0.0,
+            "length_score": 0.0,
+            "token_score": 0.0,
+            "ocr_available": false
+          }
+        },
+        "90_recommended_visual": {},
+        "91_recommended_gray": {},
+        "92_recommended_ocr": {}
+      }
+    },
+    {
+      "image": "samples\\1000018695.jpg",
+      "orientation": {
+        "best_angle": 270,
+        "override_reason": "Selected vertical orientation pair (90/270) from heuristic pre-check.",
+        "candidates": [
+          {
+            "angle": 90,
+            "heuristic_score": 213.76431713104247,
+            "ocr_conf": 0.0,
+            "text_len": 0,
+            "used_ocr": false,
+            "final_score": 213.76431713104247
+          },
+          {
+            "angle": 270,
+            "heuristic_score": 214.94003925323486,
+            "ocr_conf": 0.0,
+            "text_len": 0,
+            "used_ocr": false,
+            "final_score": 214.94003925323486
+          }
+        ]
+      },
+      "selected_ocr_branch": "00_original_bgr",
+      "selected_visual_branch": "11_color_strong_scan",
+      "ocr_ranking": [
+        {
+          "branch": "00_original_bgr",
+          "score": 0.0
+        },
+        {
+          "branch": "24_gray_whitened_scan",
+          "score": 0.0
+        },
+        {
+          "branch": "32_bw_shadow_adaptive",
+          "score": 0.0
+        }
+      ],
+      "visual_ranking": [
+        {
+          "branch": "11_color_strong_scan",
+          "score": 21.243505364708188
+        },
+        {
+          "branch": "00_original_bgr",
+          "score": 19.217065515541808
+        },
+        {
+          "branch": "10_color_natural_scan",
+          "score": 18.406057596771575
+        }
+      ],
+      "branch_scores": {
+        "00_original_bgr": {
+          "quick_ocr_score": 22.31083528811615,
+          "ocr_score": 0.0,
+          "ocr_metrics": {
+            "mean_conf": 0.0,
+            "text_len": 0,
+            "token_count": 0,
+            "raw_token_count": 0,
+            "valid_token_count": 0,
+            "valid_ratio": 0.0,
+            "garbage_ratio": 1.0,
+            "density_score": 0.0,
+            "length_score": 0.0,
+            "token_score": 0.0,
+            "ocr_available": false
+          },
+          "visual_score": 19.217065515541808
+        },
+        "10_color_natural_scan": {
+          "visual_score": 18.406057596771575
+        },
+        "11_color_strong_scan": {
+          "visual_score": 21.243505364708188
+        },
+        "20_gray_illumination": {},
+        "22_gray_clahe": {},
+        "24_gray_whitened_scan": {
+          "quick_ocr_score": 22.677748667626442,
+          "ocr_score": 0.0,
+          "ocr_metrics": {
+            "mean_conf": 0.0,
+            "text_len": 0,
+            "token_count": 0,
+            "raw_token_count": 0,
+            "valid_token_count": 0,
+            "valid_ratio": 0.0,
+            "garbage_ratio": 1.0,
+            "density_score": 0.0,
+            "length_score": 0.0,
+            "token_score": 0.0,
+            "ocr_available": false
+          }
+        },
+        "32_bw_shadow_adaptive": {
+          "quick_ocr_score": 39.191978360764175,
+          "ocr_score": 0.0,
+          "ocr_metrics": {
+            "mean_conf": 0.0,
+            "text_len": 0,
+            "token_count": 0,
+            "raw_token_count": 0,
+            "valid_token_count": 0,
+            "valid_ratio": 0.0,
+            "garbage_ratio": 1.0,
+            "density_score": 0.0,
+            "length_score": 0.0,
+            "token_score": 0.0,
+            "ocr_available": false
+          }
+        },
+        "90_recommended_visual": {},
+        "91_recommended_gray": {},
+        "92_recommended_ocr": {}
+      }
+    },
+    {
+      "image": "samples\\1000018696.jpg",
+      "orientation": {
+        "best_angle": 270,
+        "override_reason": "Selected vertical orientation pair (90/270) from heuristic pre-check.",
+        "candidates": [
+          {
+            "angle": 90,
+            "heuristic_score": 271.17732405090334,
+            "ocr_conf": 0.0,
+            "text_len": 0,
+            "used_ocr": false,
+            "final_score": 271.17732405090334
+          },
+          {
+            "angle": 270,
+            "heuristic_score": 271.65975143432615,
+            "ocr_conf": 0.0,
+            "text_len": 0,
+            "used_ocr": false,
+            "final_score": 271.65975143432615
+          }
+        ]
+      },
+      "selected_ocr_branch": "00_original_bgr",
+      "selected_visual_branch": "11_color_strong_scan",
+      "ocr_ranking": [
+        {
+          "branch": "00_original_bgr",
+          "score": 0.0
+        },
+        {
+          "branch": "24_gray_whitened_scan",
+          "score": 0.0
+        },
+        {
+          "branch": "32_bw_shadow_adaptive",
+          "score": 0.0
+        }
+      ],
+      "visual_ranking": [
+        {
+          "branch": "11_color_strong_scan",
+          "score": 21.276137619281272
+        },
+        {
+          "branch": "00_original_bgr",
+          "score": 19.244699718754013
+        },
+        {
+          "branch": "10_color_natural_scan",
+          "score": 18.534010096688505
+        }
+      ],
+      "branch_scores": {
+        "00_original_bgr": {
+          "quick_ocr_score": 22.5538461166849,
+          "ocr_score": 0.0,
+          "ocr_metrics": {
+            "mean_conf": 0.0,
+            "text_len": 0,
+            "token_count": 0,
+            "raw_token_count": 0,
+            "valid_token_count": 0,
+            "valid_ratio": 0.0,
+            "garbage_ratio": 1.0,
+            "density_score": 0.0,
+            "length_score": 0.0,
+            "token_score": 0.0,
+            "ocr_available": false
+          },
+          "visual_score": 19.244699718754013
+        },
+        "10_color_natural_scan": {
+          "visual_score": 18.534010096688505
+        },
+        "11_color_strong_scan": {
+          "visual_score": 21.276137619281272
+        },
+        "20_gray_illumination": {},
+        "22_gray_clahe": {},
+        "24_gray_whitened_scan": {
+          "quick_ocr_score": 25.824755369605946,
+          "ocr_score": 0.0,
+          "ocr_metrics": {
+            "mean_conf": 0.0,
+            "text_len": 0,
+            "token_count": 0,
+            "raw_token_count": 0,
+            "valid_token_count": 0,
+            "valid_ratio": 0.0,
+            "garbage_ratio": 1.0,
+            "density_score": 0.0,
+            "length_score": 0.0,
+            "token_score": 0.0,
+            "ocr_available": false
+          }
+        },
+        "32_bw_shadow_adaptive": {
+          "quick_ocr_score": 38.70150027048483,
+          "ocr_score": 0.0,
+          "ocr_metrics": {
+            "mean_conf": 0.0,
+            "text_len": 0,
+            "token_count": 0,
+            "raw_token_count": 0,
+            "valid_token_count": 0,
+            "valid_ratio": 0.0,
+            "garbage_ratio": 1.0,
+            "density_score": 0.0,
+            "length_score": 0.0,
+            "token_score": 0.0,
+            "ocr_available": false
+          }
+        },
+        "90_recommended_visual": {},
+        "91_recommended_gray": {},
+        "92_recommended_ocr": {}
+      }
+    },
+    {
+      "image": "samples\\1000018697.jpg",
+      "orientation": {
+        "best_angle": 90,
+        "override_reason": "Selected vertical orientation pair (90/270) from heuristic pre-check.",
+        "candidates": [
+          {
+            "angle": 90,
+            "heuristic_score": 269.5787675323486,
+            "ocr_conf": 0.0,
+            "text_len": 0,
+            "used_ocr": false,
+            "final_score": 269.5787675323486
+          },
+          {
+            "angle": 270,
+            "heuristic_score": 267.53657343292235,
+            "ocr_conf": 0.0,
+            "text_len": 0,
+            "used_ocr": false,
+            "final_score": 267.53657343292235
+          }
+        ]
+      },
+      "selected_ocr_branch": "00_original_bgr",
+      "selected_visual_branch": "11_color_strong_scan",
+      "ocr_ranking": [
+        {
+          "branch": "00_original_bgr",
+          "score": 0.0
+        },
+        {
+          "branch": "24_gray_whitened_scan",
+          "score": 0.0
+        },
+        {
+          "branch": "32_bw_shadow_adaptive",
+          "score": 0.0
+        }
+      ],
+      "visual_ranking": [
+        {
+          "branch": "11_color_strong_scan",
+          "score": 23.538403572457568
+        },
+        {
+          "branch": "00_original_bgr",
+          "score": 21.433658480377527
+        },
+        {
+          "branch": "10_color_natural_scan",
+          "score": 19.77506271268977
+        }
+      ],
+      "branch_scores": {
+        "00_original_bgr": {
+          "quick_ocr_score": 25.417160458505116,
+          "ocr_score": 0.0,
+          "ocr_metrics": {
+            "mean_conf": 0.0,
+            "text_len": 0,
+            "token_count": 0,
+            "raw_token_count": 0,
+            "valid_token_count": 0,
+            "valid_ratio": 0.0,
+            "garbage_ratio": 1.0,
+            "density_score": 0.0,
+            "length_score": 0.0,
+            "token_score": 0.0,
+            "ocr_available": false
+          },
+          "visual_score": 21.433658480377527
+        },
+        "10_color_natural_scan": {
+          "visual_score": 19.77506271268977
+        },
+        "11_color_strong_scan": {
+          "visual_score": 23.538403572457568
+        },
+        "20_gray_illumination": {},
+        "22_gray_clahe": {},
+        "24_gray_whitened_scan": {
+          "quick_ocr_score": 23.306985804648825,
+          "ocr_score": 0.0,
+          "ocr_metrics": {
+            "mean_conf": 0.0,
+            "text_len": 0,
+            "token_count": 0,
+            "raw_token_count": 0,
+            "valid_token_count": 0,
+            "valid_ratio": 0.0,
+            "garbage_ratio": 1.0,
+            "density_score": 0.0,
+            "length_score": 0.0,
+            "token_score": 0.0,
+            "ocr_available": false
+          }
+        },
+        "32_bw_shadow_adaptive": {
+          "quick_ocr_score": 41.571597357273056,
+          "ocr_score": 0.0,
+          "ocr_metrics": {
+            "mean_conf": 0.0,
+            "text_len": 0,
+            "token_count": 0,
+            "raw_token_count": 0,
+            "valid_token_count": 0,
+            "valid_ratio": 0.0,
+            "garbage_ratio": 1.0,
+            "density_score": 0.0,
+            "length_score": 0.0,
+            "token_score": 0.0,
+            "ocr_available": false
+          }
+        },
+        "90_recommended_visual": {},
+        "91_recommended_gray": {},
+        "92_recommended_ocr": {}
+      }
+    },
+    {
+      "image": "samples\\1000018698.jpg",
+      "orientation": {
+        "best_angle": 270,
+        "override_reason": "Selected vertical orientation pair (90/270) from heuristic pre-check.",
+        "candidates": [
+          {
+            "angle": 90,
+            "heuristic_score": 217.99005712890624,
+            "ocr_conf": 0.0,
+            "text_len": 0,
+            "used_ocr": false,
+            "final_score": 217.99005712890624
+          },
+          {
+            "angle": 270,
+            "heuristic_score": 219.04461944580078,
+            "ocr_conf": 0.0,
+            "text_len": 0,
+            "used_ocr": false,
+            "final_score": 219.04461944580078
+          }
+        ]
+      },
+      "selected_ocr_branch": "00_original_bgr",
+      "selected_visual_branch": "11_color_strong_scan",
+      "ocr_ranking": [
+        {
+          "branch": "00_original_bgr",
+          "score": 0.0
+        },
+        {
+          "branch": "24_gray_whitened_scan",
+          "score": 0.0
+        },
+        {
+          "branch": "32_bw_shadow_adaptive",
+          "score": 0.0
+        }
+      ],
+      "visual_ranking": [
+        {
+          "branch": "11_color_strong_scan",
+          "score": 20.625338329243665
+        },
+        {
+          "branch": "00_original_bgr",
+          "score": 18.957039424150096
+        },
+        {
+          "branch": "10_color_natural_scan",
+          "score": 17.681893543668394
+        }
+      ],
+      "branch_scores": {
+        "00_original_bgr": {
+          "quick_ocr_score": 22.388848704519084,
+          "ocr_score": 0.0,
+          "ocr_metrics": {
+            "mean_conf": 0.0,
+            "text_len": 0,
+            "token_count": 0,
+            "raw_token_count": 0,
+            "valid_token_count": 0,
+            "valid_ratio": 0.0,
+            "garbage_ratio": 1.0,
+            "density_score": 0.0,
+            "length_score": 0.0,
+            "token_score": 0.0,
+            "ocr_available": false
+          },
+          "visual_score": 18.957039424150096
+        },
+        "10_color_natural_scan": {
+          "visual_score": 17.681893543668394
+        },
+        "11_color_strong_scan": {
+          "visual_score": 20.625338329243665
+        },
+        "20_gray_illumination": {},
+        "22_gray_clahe": {},
+        "24_gray_whitened_scan": {
+          "quick_ocr_score": 19.97411991809711,
+          "ocr_score": 0.0,
+          "ocr_metrics": {
+            "mean_conf": 0.0,
+            "text_len": 0,
+            "token_count": 0,
+            "raw_token_count": 0,
+            "valid_token_count": 0,
+            "valid_ratio": 0.0,
+            "garbage_ratio": 1.0,
+            "density_score": 0.0,
+            "length_score": 0.0,
+            "token_score": 0.0,
+            "ocr_available": false
+          }
+        },
+        "32_bw_shadow_adaptive": {
+          "quick_ocr_score": 37.87886366777851,
+          "ocr_score": 0.0,
+          "ocr_metrics": {
+            "mean_conf": 0.0,
+            "text_len": 0,
+            "token_count": 0,
+            "raw_token_count": 0,
+            "valid_token_count": 0,
+            "valid_ratio": 0.0,
+            "garbage_ratio": 1.0,
+            "density_score": 0.0,
+            "length_score": 0.0,
+            "token_score": 0.0,
+            "ocr_available": false
+          }
+        },
+        "90_recommended_visual": {},
+        "91_recommended_gray": {},
+        "92_recommended_ocr": {}
+      }
+    },
+    {
+      "image": "samples\\1000018699.jpg",
+      "orientation": {
+        "best_angle": 90,
+        "override_reason": "Selected vertical orientation pair (90/270) from heuristic pre-check.",
+        "candidates": [
+          {
+            "angle": 90,
+            "heuristic_score": 223.75976770782472,
+            "ocr_conf": 0.0,
+            "text_len": 0,
+            "used_ocr": false,
+            "final_score": 223.75976770782472
+          },
+          {
+            "angle": 270,
+            "heuristic_score": 222.9445452270508,
+            "ocr_conf": 0.0,
+            "text_len": 0,
+            "used_ocr": false,
+            "final_score": 222.9445452270508
+          }
+        ]
+      },
+      "selected_ocr_branch": "00_original_bgr",
+      "selected_visual_branch": "11_color_strong_scan",
+      "ocr_ranking": [
+        {
+          "branch": "00_original_bgr",
+          "score": 0.0
+        },
+        {
+          "branch": "24_gray_whitened_scan",
+          "score": 0.0
+        },
+        {
+          "branch": "32_bw_shadow_adaptive",
+          "score": 0.0
+        }
+      ],
+      "visual_ranking": [
+        {
+          "branch": "11_color_strong_scan",
+          "score": 20.95880569983336
+        },
+        {
+          "branch": "00_original_bgr",
+          "score": 18.52904564702277
+        },
+        {
+          "branch": "10_color_natural_scan",
+          "score": 18.02586207518039
+        }
+      ],
+      "branch_scores": {
+        "00_original_bgr": {
+          "quick_ocr_score": 21.591358899089474,
+          "ocr_score": 0.0,
+          "ocr_metrics": {
+            "mean_conf": 0.0,
+            "text_len": 0,
+            "token_count": 0,
+            "raw_token_count": 0,
+            "valid_token_count": 0,
+            "valid_ratio": 0.0,
+            "garbage_ratio": 1.0,
+            "density_score": 0.0,
+            "length_score": 0.0,
+            "token_score": 0.0,
+            "ocr_available": false
+          },
+          "visual_score": 18.52904564702277
+        },
+        "10_color_natural_scan": {
+          "visual_score": 18.02586207518039
+        },
+        "11_color_strong_scan": {
+          "visual_score": 20.95880569983336
+        },
+        "20_gray_illumination": {},
+        "22_gray_clahe": {},
+        "24_gray_whitened_scan": {
+          "quick_ocr_score": 22.357504612707093,
+          "ocr_score": 0.0,
+          "ocr_metrics": {
+            "mean_conf": 0.0,
+            "text_len": 0,
+            "token_count": 0,
+            "raw_token_count": 0,
+            "valid_token_count": 0,
+            "valid_ratio": 0.0,
+            "garbage_ratio": 1.0,
+            "density_score": 0.0,
+            "length_score": 0.0,
+            "token_score": 0.0,
+            "ocr_available": false
+          }
+        },
+        "32_bw_shadow_adaptive": {
+          "quick_ocr_score": 38.657027777864656,
+          "ocr_score": 0.0,
+          "ocr_metrics": {
+            "mean_conf": 0.0,
+            "text_len": 0,
+            "token_count": 0,
+            "raw_token_count": 0,
+            "valid_token_count": 0,
+            "valid_ratio": 0.0,
+            "garbage_ratio": 1.0,
+            "density_score": 0.0,
+            "length_score": 0.0,
+            "token_score": 0.0,
+            "ocr_available": false
+          }
+        },
+        "90_recommended_visual": {},
+        "91_recommended_gray": {},
+        "92_recommended_ocr": {}
+      }
+    },
+    {
+      "image": "samples\\1000018700.jpg",
+      "orientation": {
+        "best_angle": 90,
+        "override_reason": "Selected vertical orientation pair (90/270) from heuristic pre-check.",
+        "candidates": [
+          {
+            "angle": 90,
+            "heuristic_score": 225.2269811630249,
+            "ocr_conf": 0.0,
+            "text_len": 0,
+            "used_ocr": false,
+            "final_score": 225.2269811630249
+          },
+          {
+            "angle": 270,
+            "heuristic_score": 223.70141719055175,
+            "ocr_conf": 0.0,
+            "text_len": 0,
+            "used_ocr": false,
+            "final_score": 223.70141719055175
+          }
+        ]
+      },
+      "selected_ocr_branch": "00_original_bgr",
+      "selected_visual_branch": "11_color_strong_scan",
+      "ocr_ranking": [
+        {
+          "branch": "00_original_bgr",
+          "score": 0.0
+        },
+        {
+          "branch": "24_gray_whitened_scan",
+          "score": 0.0
+        },
+        {
+          "branch": "32_bw_shadow_adaptive",
+          "score": 0.0
+        }
+      ],
+      "visual_ranking": [
+        {
+          "branch": "11_color_strong_scan",
+          "score": 21.417910715642765
+        },
+        {
+          "branch": "00_original_bgr",
+          "score": 18.833742848301025
+        },
+        {
+          "branch": "10_color_natural_scan",
+          "score": 18.46404267305859
+        }
+      ],
+      "branch_scores": {
+        "00_original_bgr": {
+          "quick_ocr_score": 22.11804263131117,
+          "ocr_score": 0.0,
+          "ocr_metrics": {
+            "mean_conf": 0.0,
+            "text_len": 0,
+            "token_count": 0,
+            "raw_token_count": 0,
+            "valid_token_count": 0,
+            "valid_ratio": 0.0,
+            "garbage_ratio": 1.0,
+            "density_score": 0.0,
+            "length_score": 0.0,
+            "token_score": 0.0,
+            "ocr_available": false
+          },
+          "visual_score": 18.833742848301025
+        },
+        "10_color_natural_scan": {
+          "visual_score": 18.46404267305859
+        },
+        "11_color_strong_scan": {
+          "visual_score": 21.417910715642765
+        },
+        "20_gray_illumination": {},
+        "22_gray_clahe": {},
+        "24_gray_whitened_scan": {
+          "quick_ocr_score": 22.013371854798184,
+          "ocr_score": 0.0,
+          "ocr_metrics": {
+            "mean_conf": 0.0,
+            "text_len": 0,
+            "token_count": 0,
+            "raw_token_count": 0,
+            "valid_token_count": 0,
+            "valid_ratio": 0.0,
+            "garbage_ratio": 1.0,
+            "density_score": 0.0,
+            "length_score": 0.0,
+            "token_score": 0.0,
+            "ocr_available": false
+          }
+        },
+        "32_bw_shadow_adaptive": {
+          "quick_ocr_score": 39.49775877076839,
+          "ocr_score": 0.0,
+          "ocr_metrics": {
+            "mean_conf": 0.0,
+            "text_len": 0,
+            "token_count": 0,
+            "raw_token_count": 0,
+            "valid_token_count": 0,
+            "valid_ratio": 0.0,
+            "garbage_ratio": 1.0,
+            "density_score": 0.0,
+            "length_score": 0.0,
+            "token_score": 0.0,
+            "ocr_available": false
+          }
+        },
+        "90_recommended_visual": {},
+        "91_recommended_gray": {},
+        "92_recommended_ocr": {}
+      }
+    },
+    {
+      "image": "samples\\1000018701.jpg",
+      "orientation": {
+        "best_angle": 0,
+        "override_reason": "Preferred 0 degrees because 180-degree score advantage was too small.",
+        "candidates": [
+          {
+            "angle": 0,
+            "heuristic_score": 158.06198654174804,
+            "ocr_conf": 0.0,
+            "text_len": 0,
+            "used_ocr": false,
+            "final_score": 158.06198654174804
+          },
+          {
+            "angle": 180,
+            "heuristic_score": 158.97622900390624,
+            "ocr_conf": 0.0,
+            "text_len": 0,
+            "used_ocr": false,
+            "final_score": 158.97622900390624
+          }
+        ]
+      },
+      "selected_ocr_branch": "00_original_bgr",
+      "selected_visual_branch": "11_color_strong_scan",
+      "ocr_ranking": [
+        {
+          "branch": "00_original_bgr",
+          "score": 0.0
+        },
+        {
+          "branch": "24_gray_whitened_scan",
+          "score": 0.0
+        },
+        {
+          "branch": "32_bw_shadow_adaptive",
+          "score": 0.0
+        }
+      ],
+      "visual_ranking": [
+        {
+          "branch": "11_color_strong_scan",
+          "score": 23.94934869254475
+        },
+        {
+          "branch": "00_original_bgr",
+          "score": 21.645343435778067
+        },
+        {
+          "branch": "10_color_natural_scan",
+          "score": 20.44677943653164
+        }
+      ],
+      "branch_scores": {
+        "00_original_bgr": {
+          "quick_ocr_score": 24.263860994113674,
+          "ocr_score": 0.0,
+          "ocr_metrics": {
+            "mean_conf": 0.0,
+            "text_len": 0,
+            "token_count": 0,
+            "raw_token_count": 0,
+            "valid_token_count": 0,
+            "valid_ratio": 0.0,
+            "garbage_ratio": 1.0,
+            "density_score": 0.0,
+            "length_score": 0.0,
+            "token_score": 0.0,
+            "ocr_available": false
+          },
+          "visual_score": 21.645343435778067
+        },
+        "10_color_natural_scan": {
+          "visual_score": 20.44677943653164
+        },
+        "11_color_strong_scan": {
+          "visual_score": 23.94934869254475
+        },
+        "20_gray_illumination": {},
+        "22_gray_clahe": {},
+        "24_gray_whitened_scan": {
+          "quick_ocr_score": 26.805685633184858,
+          "ocr_score": 0.0,
+          "ocr_metrics": {
+            "mean_conf": 0.0,
+            "text_len": 0,
+            "token_count": 0,
+            "raw_token_count": 0,
+            "valid_token_count": 0,
+            "valid_ratio": 0.0,
+            "garbage_ratio": 1.0,
+            "density_score": 0.0,
+            "length_score": 0.0,
+            "token_score": 0.0,
+            "ocr_available": false
+          }
+        },
+        "32_bw_shadow_adaptive": {
+          "quick_ocr_score": 41.90166024181565,
+          "ocr_score": 0.0,
+          "ocr_metrics": {
+            "mean_conf": 0.0,
+            "text_len": 0,
+            "token_count": 0,
+            "raw_token_count": 0,
+            "valid_token_count": 0,
+            "valid_ratio": 0.0,
+            "garbage_ratio": 1.0,
+            "density_score": 0.0,
+            "length_score": 0.0,
+            "token_score": 0.0,
+            "ocr_available": false
+          }
+        },
+        "90_recommended_visual": {},
+        "91_recommended_gray": {},
+        "92_recommended_ocr": {}
+      }
+    },
+    {
+      "image": "samples\\1000018702.jpg",
+      "orientation": {
+        "best_angle": 0,
+        "override_reason": "Preferred 0 degrees because 180-degree score advantage was too small.",
+        "candidates": [
+          {
+            "angle": 0,
+            "heuristic_score": 143.38290405273438,
+            "ocr_conf": 0.0,
+            "text_len": 0,
+            "used_ocr": false,
+            "final_score": 143.38290405273438
+          },
+          {
+            "angle": 180,
+            "heuristic_score": 144.66106109619142,
+            "ocr_conf": 0.0,
+            "text_len": 0,
+            "used_ocr": false,
+            "final_score": 144.66106109619142
+          }
+        ]
+      },
+      "selected_ocr_branch": "00_original_bgr",
+      "selected_visual_branch": "11_color_strong_scan",
+      "ocr_ranking": [
+        {
+          "branch": "00_original_bgr",
+          "score": 0.0
+        },
+        {
+          "branch": "24_gray_whitened_scan",
+          "score": 0.0
+        },
+        {
+          "branch": "32_bw_shadow_adaptive",
+          "score": 0.0
+        }
+      ],
+      "visual_ranking": [
+        {
+          "branch": "11_color_strong_scan",
+          "score": 24.23710959482968
+        },
+        {
+          "branch": "00_original_bgr",
+          "score": 21.220139380909057
+        },
+        {
+          "branch": "10_color_natural_scan",
+          "score": 20.363989921408766
+        }
+      ],
+      "branch_scores": {
+        "00_original_bgr": {
+          "quick_ocr_score": 23.61906638879482,
+          "ocr_score": 0.0,
+          "ocr_metrics": {
+            "mean_conf": 0.0,
+            "text_len": 0,
+            "token_count": 0,
+            "raw_token_count": 0,
+            "valid_token_count": 0,
+            "valid_ratio": 0.0,
+            "garbage_ratio": 1.0,
+            "density_score": 0.0,
+            "length_score": 0.0,
+            "token_score": 0.0,
+            "ocr_available": false
+          },
+          "visual_score": 21.220139380909057
+        },
+        "10_color_natural_scan": {
+          "visual_score": 20.363989921408766
+        },
+        "11_color_strong_scan": {
+          "visual_score": 24.23710959482968
+        },
+        "20_gray_illumination": {},
+        "22_gray_clahe": {},
+        "24_gray_whitened_scan": {
+          "quick_ocr_score": 27.59724254149487,
+          "ocr_score": 0.0,
+          "ocr_metrics": {
+            "mean_conf": 0.0,
+            "text_len": 0,
+            "token_count": 0,
+            "raw_token_count": 0,
+            "valid_token_count": 0,
+            "valid_ratio": 0.0,
+            "garbage_ratio": 1.0,
+            "density_score": 0.0,
+            "length_score": 0.0,
+            "token_score": 0.0,
+            "ocr_available": false
+          }
+        },
+        "32_bw_shadow_adaptive": {
+          "quick_ocr_score": 43.48309786311826,
+          "ocr_score": 0.0,
+          "ocr_metrics": {
+            "mean_conf": 0.0,
+            "text_len": 0,
+            "token_count": 0,
+            "raw_token_count": 0,
+            "valid_token_count": 0,
+            "valid_ratio": 0.0,
+            "garbage_ratio": 1.0,
+            "density_score": 0.0,
+            "length_score": 0.0,
+            "token_score": 0.0,
+            "ocr_available": false
+          }
+        },
+        "90_recommended_visual": {},
+        "91_recommended_gray": {},
+        "92_recommended_ocr": {}
+      }
+    },
+    {
+      "image": "samples\\1000018703.jpg",
+      "orientation": {
+        "best_angle": 0,
+        "override_reason": "Selected horizontal orientation pair (0/180) from heuristic pre-check.",
+        "candidates": [
+          {
+            "angle": 0,
+            "heuristic_score": 112.54337387084962,
+            "ocr_conf": 0.0,
+            "text_len": 0,
+            "used_ocr": false,
+            "final_score": 112.54337387084962
+          },
+          {
+            "angle": 180,
+            "heuristic_score": 112.40474014282228,
+            "ocr_conf": 0.0,
+            "text_len": 0,
+            "used_ocr": false,
+            "final_score": 112.40474014282228
+          }
+        ]
+      },
+      "selected_ocr_branch": "00_original_bgr",
+      "selected_visual_branch": "11_color_strong_scan",
+      "ocr_ranking": [
+        {
+          "branch": "00_original_bgr",
+          "score": 0.0
+        },
+        {
+          "branch": "24_gray_whitened_scan",
+          "score": 0.0
+        },
+        {
+          "branch": "32_bw_shadow_adaptive",
+          "score": 0.0
+        }
+      ],
+      "visual_ranking": [
+        {
+          "branch": "11_color_strong_scan",
+          "score": 23.738959337622397
+        },
+        {
+          "branch": "00_original_bgr",
+          "score": 20.814696687339048
+        },
+        {
+          "branch": "10_color_natural_scan",
+          "score": 20.006656412303393
+        }
+      ],
+      "branch_scores": {
+        "00_original_bgr": {
+          "quick_ocr_score": 23.00590293126781,
+          "ocr_score": 0.0,
+          "ocr_metrics": {
+            "mean_conf": 0.0,
+            "text_len": 0,
+            "token_count": 0,
+            "raw_token_count": 0,
+            "valid_token_count": 0,
+            "valid_ratio": 0.0,
+            "garbage_ratio": 1.0,
+            "density_score": 0.0,
+            "length_score": 0.0,
+            "token_score": 0.0,
+            "ocr_available": false
+          },
+          "visual_score": 20.814696687339048
+        },
+        "10_color_natural_scan": {
+          "visual_score": 20.006656412303393
+        },
+        "11_color_strong_scan": {
+          "visual_score": 23.738959337622397
+        },
+        "20_gray_illumination": {},
+        "22_gray_clahe": {},
+        "24_gray_whitened_scan": {
+          "quick_ocr_score": 24.663300482698876,
+          "ocr_score": 0.0,
+          "ocr_metrics": {
+            "mean_conf": 0.0,
+            "text_len": 0,
+            "token_count": 0,
+            "raw_token_count": 0,
+            "valid_token_count": 0,
+            "valid_ratio": 0.0,
+            "garbage_ratio": 1.0,
+            "density_score": 0.0,
+            "length_score": 0.0,
+            "token_score": 0.0,
+            "ocr_available": false
+          }
+        },
+        "32_bw_shadow_adaptive": {
+          "quick_ocr_score": 43.453619324498256,
+          "ocr_score": 0.0,
+          "ocr_metrics": {
+            "mean_conf": 0.0,
+            "text_len": 0,
+            "token_count": 0,
+            "raw_token_count": 0,
+            "valid_token_count": 0,
+            "valid_ratio": 0.0,
+            "garbage_ratio": 1.0,
+            "density_score": 0.0,
+            "length_score": 0.0,
+            "token_score": 0.0,
+            "ocr_available": false
+          }
+        },
+        "90_recommended_visual": {},
+        "91_recommended_gray": {},
+        "92_recommended_ocr": {}
+      }
+    },
+    {
+      "image": "samples\\1000018705.jpg",
+      "orientation": {
+        "best_angle": 270,
+        "override_reason": "Selected vertical orientation pair (90/270) from heuristic pre-check.",
+        "candidates": [
+          {
+            "angle": 90,
+            "heuristic_score": 100.14338302612306,
+            "ocr_conf": 0.0,
+            "text_len": 0,
+            "used_ocr": false,
+            "final_score": 100.14338302612306
+          },
+          {
+            "angle": 270,
+            "heuristic_score": 100.53860523986816,
+            "ocr_conf": 0.0,
+            "text_len": 0,
+            "used_ocr": false,
+            "final_score": 100.53860523986816
+          }
+        ]
+      },
+      "selected_ocr_branch": "00_original_bgr",
+      "selected_visual_branch": "11_color_strong_scan",
+      "ocr_ranking": [
+        {
+          "branch": "00_original_bgr",
+          "score": 0.0
+        },
+        {
+          "branch": "24_gray_whitened_scan",
+          "score": 0.0
+        },
+        {
+          "branch": "32_bw_shadow_adaptive",
+          "score": 0.0
+        }
+      ],
+      "visual_ranking": [
+        {
+          "branch": "11_color_strong_scan",
+          "score": 22.83329121010144
+        },
+        {
+          "branch": "10_color_natural_scan",
+          "score": 19.559355089979025
+        },
+        {
+          "branch": "00_original_bgr",
+          "score": 19.21789477936735
+        }
+      ],
+      "branch_scores": {
+        "00_original_bgr": {
+          "quick_ocr_score": 20.841600318963916,
+          "ocr_score": 0.0,
+          "ocr_metrics": {
+            "mean_conf": 0.0,
+            "text_len": 0,
+            "token_count": 0,
+            "raw_token_count": 0,
+            "valid_token_count": 0,
+            "valid_ratio": 0.0,
+            "garbage_ratio": 1.0,
+            "density_score": 0.0,
+            "length_score": 0.0,
+            "token_score": 0.0,
+            "ocr_available": false
+          },
+          "visual_score": 19.21789477936735
+        },
+        "10_color_natural_scan": {
+          "visual_score": 19.559355089979025
+        },
+        "11_color_strong_scan": {
+          "visual_score": 22.83329121010144
+        },
+        "20_gray_illumination": {},
+        "22_gray_clahe": {},
+        "24_gray_whitened_scan": {
+          "quick_ocr_score": 23.206875829489338,
+          "ocr_score": 0.0,
+          "ocr_metrics": {
+            "mean_conf": 0.0,
+            "text_len": 0,
+            "token_count": 0,
+            "raw_token_count": 0,
+            "valid_token_count": 0,
+            "valid_ratio": 0.0,
+            "garbage_ratio": 1.0,
+            "density_score": 0.0,
+            "length_score": 0.0,
+            "token_score": 0.0,
+            "ocr_available": false
+          }
+        },
+        "32_bw_shadow_adaptive": {
+          "quick_ocr_score": 43.36049314232776,
+          "ocr_score": 0.0,
+          "ocr_metrics": {
+            "mean_conf": 0.0,
+            "text_len": 0,
+            "token_count": 0,
+            "raw_token_count": 0,
+            "valid_token_count": 0,
+            "valid_ratio": 0.0,
+            "garbage_ratio": 1.0,
+            "density_score": 0.0,
+            "length_score": 0.0,
+            "token_score": 0.0,
+            "ocr_available": false
+          }
+        },
+        "90_recommended_visual": {},
+        "91_recommended_gray": {},
+        "92_recommended_ocr": {}
+      }
+    },
+    {
+      "image": "samples\\1000018706.jpg",
+      "orientation": {
+        "best_angle": 0,
+        "override_reason": "Selected horizontal orientation pair (0/180) from heuristic pre-check.",
+        "candidates": [
+          {
+            "angle": 0,
+            "heuristic_score": 99.15703967285155,
+            "ocr_conf": 0.0,
+            "text_len": 0,
+            "used_ocr": false,
+            "final_score": 99.15703967285155
+          },
+          {
+            "angle": 180,
+            "heuristic_score": 98.29706961059571,
+            "ocr_conf": 0.0,
+            "text_len": 0,
+            "used_ocr": false,
+            "final_score": 98.29706961059571
+          }
+        ]
+      },
+      "selected_ocr_branch": "00_original_bgr",
+      "selected_visual_branch": "11_color_strong_scan",
+      "ocr_ranking": [
+        {
+          "branch": "00_original_bgr",
+          "score": 0.0
+        },
+        {
+          "branch": "24_gray_whitened_scan",
+          "score": 0.0
+        },
+        {
+          "branch": "32_bw_shadow_adaptive",
+          "score": 0.0
+        }
+      ],
+      "visual_ranking": [
+        {
+          "branch": "11_color_strong_scan",
+          "score": 23.44606033632436
+        },
+        {
+          "branch": "00_original_bgr",
+          "score": 20.048720157177655
+        },
+        {
+          "branch": "10_color_natural_scan",
+          "score": 19.91888503612646
+        }
+      ],
+      "branch_scores": {
+        "00_original_bgr": {
+          "quick_ocr_score": 21.939341758587926,
+          "ocr_score": 0.0,
+          "ocr_metrics": {
+            "mean_conf": 0.0,
+            "text_len": 0,
+            "token_count": 0,
+            "raw_token_count": 0,
+            "valid_token_count": 0,
+            "valid_ratio": 0.0,
+            "garbage_ratio": 1.0,
+            "density_score": 0.0,
+            "length_score": 0.0,
+            "token_score": 0.0,
+            "ocr_available": false
+          },
+          "visual_score": 20.048720157177655
+        },
+        "10_color_natural_scan": {
+          "visual_score": 19.91888503612646
+        },
+        "11_color_strong_scan": {
+          "visual_score": 23.44606033632436
+        },
+        "20_gray_illumination": {},
+        "22_gray_clahe": {},
+        "24_gray_whitened_scan": {
+          "quick_ocr_score": 24.222940820583556,
+          "ocr_score": 0.0,
+          "ocr_metrics": {
+            "mean_conf": 0.0,
+            "text_len": 0,
+            "token_count": 0,
+            "raw_token_count": 0,
+            "valid_token_count": 0,
+            "valid_ratio": 0.0,
+            "garbage_ratio": 1.0,
+            "density_score": 0.0,
+            "length_score": 0.0,
+            "token_score": 0.0,
+            "ocr_available": false
+          }
+        },
+        "32_bw_shadow_adaptive": {
+          "quick_ocr_score": 44.25288247930946,
+          "ocr_score": 0.0,
+          "ocr_metrics": {
+            "mean_conf": 0.0,
+            "text_len": 0,
+            "token_count": 0,
+            "raw_token_count": 0,
+            "valid_token_count": 0,
+            "valid_ratio": 0.0,
+            "garbage_ratio": 1.0,
+            "density_score": 0.0,
+            "length_score": 0.0,
+            "token_score": 0.0,
+            "ocr_available": false
+          }
+        },
+        "90_recommended_visual": {},
+        "91_recommended_gray": {},
+        "92_recommended_ocr": {}
+      }
+    },
+    {
+      "image": "samples\\1000018707.jpg",
+      "orientation": {
+        "best_angle": 270,
+        "override_reason": "Selected vertical orientation pair (90/270) from heuristic pre-check.",
+        "candidates": [
+          {
+            "angle": 90,
+            "heuristic_score": 122.34235340881347,
+            "ocr_conf": 0.0,
+            "text_len": 0,
+            "used_ocr": false,
+            "final_score": 122.34235340881347
+          },
+          {
+            "angle": 270,
+            "heuristic_score": 123.98321492004393,
+            "ocr_conf": 0.0,
+            "text_len": 0,
+            "used_ocr": false,
+            "final_score": 123.98321492004393
+          }
+        ]
+      },
+      "selected_ocr_branch": "00_original_bgr",
+      "selected_visual_branch": "11_color_strong_scan",
+      "ocr_ranking": [
+        {
+          "branch": "00_original_bgr",
+          "score": 0.0
+        },
+        {
+          "branch": "24_gray_whitened_scan",
+          "score": 0.0
+        },
+        {
+          "branch": "32_bw_shadow_adaptive",
+          "score": 0.0
+        }
+      ],
+      "visual_ranking": [
+        {
+          "branch": "11_color_strong_scan",
+          "score": 23.597398175033355
+        },
+        {
+          "branch": "00_original_bgr",
+          "score": 20.40859103841516
+        },
+        {
+          "branch": "10_color_natural_scan",
+          "score": 20.08661111915287
+        }
+      ],
+      "branch_scores": {
+        "00_original_bgr": {
+          "quick_ocr_score": 22.381784017020195,
+          "ocr_score": 0.0,
+          "ocr_metrics": {
+            "mean_conf": 0.0,
+            "text_len": 0,
+            "token_count": 0,
+            "raw_token_count": 0,
+            "valid_token_count": 0,
+            "valid_ratio": 0.0,
+            "garbage_ratio": 1.0,
+            "density_score": 0.0,
+            "length_score": 0.0,
+            "token_score": 0.0,
+            "ocr_available": false
+          },
+          "visual_score": 20.40859103841516
+        },
+        "10_color_natural_scan": {
+          "visual_score": 20.08661111915287
+        },
+        "11_color_strong_scan": {
+          "visual_score": 23.597398175033355
+        },
+        "20_gray_illumination": {},
+        "22_gray_clahe": {},
+        "24_gray_whitened_scan": {
+          "quick_ocr_score": 24.468762995763054,
+          "ocr_score": 0.0,
+          "ocr_metrics": {
+            "mean_conf": 0.0,
+            "text_len": 0,
+            "token_count": 0,
+            "raw_token_count": 0,
+            "valid_token_count": 0,
+            "valid_ratio": 0.0,
+            "garbage_ratio": 1.0,
+            "density_score": 0.0,
+            "length_score": 0.0,
+            "token_score": 0.0,
+            "ocr_available": false
+          }
+        },
+        "32_bw_shadow_adaptive": {
+          "quick_ocr_score": 44.29553091195329,
+          "ocr_score": 0.0,
+          "ocr_metrics": {
+            "mean_conf": 0.0,
+            "text_len": 0,
+            "token_count": 0,
+            "raw_token_count": 0,
+            "valid_token_count": 0,
+            "valid_ratio": 0.0,
+            "garbage_ratio": 1.0,
+            "density_score": 0.0,
+            "length_score": 0.0,
+            "token_score": 0.0,
+            "ocr_available": false
+          }
+        },
+        "90_recommended_visual": {},
+        "91_recommended_gray": {},
+        "92_recommended_ocr": {}
+      }
+    },
+    {
+      "image": "samples\\1000018708.jpg",
+      "orientation": {
+        "best_angle": 270,
+        "override_reason": "Selected vertical orientation pair (90/270) from heuristic pre-check.",
+        "candidates": [
+          {
+            "angle": 90,
+            "heuristic_score": 132.36911570739747,
+            "ocr_conf": 0.0,
+            "text_len": 0,
+            "used_ocr": false,
+            "final_score": 132.36911570739747
+          },
+          {
+            "angle": 270,
+            "heuristic_score": 132.6669983215332,
+            "ocr_conf": 0.0,
+            "text_len": 0,
+            "used_ocr": false,
+            "final_score": 132.6669983215332
+          }
+        ]
+      },
+      "selected_ocr_branch": "00_original_bgr",
+      "selected_visual_branch": "11_color_strong_scan",
+      "ocr_ranking": [
+        {
+          "branch": "00_original_bgr",
+          "score": 0.0
+        },
+        {
+          "branch": "24_gray_whitened_scan",
+          "score": 0.0
+        },
+        {
+          "branch": "32_bw_shadow_adaptive",
+          "score": 0.0
+        }
+      ],
+      "visual_ranking": [
+        {
+          "branch": "11_color_strong_scan",
+          "score": 22.8085393341131
+        },
+        {
+          "branch": "00_original_bgr",
+          "score": 19.995051234994833
+        },
+        {
+          "branch": "10_color_natural_scan",
+          "score": 19.244807684321945
+        }
+      ],
+      "branch_scores": {
+        "00_original_bgr": {
+          "quick_ocr_score": 21.813509965889388,
+          "ocr_score": 0.0,
+          "ocr_metrics": {
+            "mean_conf": 0.0,
+            "text_len": 0,
+            "token_count": 0,
+            "raw_token_count": 0,
+            "valid_token_count": 0,
+            "valid_ratio": 0.0,
+            "garbage_ratio": 1.0,
+            "density_score": 0.0,
+            "length_score": 0.0,
+            "token_score": 0.0,
+            "ocr_available": false
+          },
+          "visual_score": 19.995051234994833
+        },
+        "10_color_natural_scan": {
+          "visual_score": 19.244807684321945
+        },
+        "11_color_strong_scan": {
+          "visual_score": 22.8085393341131
+        },
+        "20_gray_illumination": {},
+        "22_gray_clahe": {},
+        "24_gray_whitened_scan": {
+          "quick_ocr_score": 24.033851569448842,
+          "ocr_score": 0.0,
+          "ocr_metrics": {
+            "mean_conf": 0.0,
+            "text_len": 0,
+            "token_count": 0,
+            "raw_token_count": 0,
+            "valid_token_count": 0,
+            "valid_ratio": 0.0,
+            "garbage_ratio": 1.0,
+            "density_score": 0.0,
+            "length_score": 0.0,
+            "token_score": 0.0,
+            "ocr_available": false
+          }
+        },
+        "32_bw_shadow_adaptive": {
+          "quick_ocr_score": 43.35178815805793,
+          "ocr_score": 0.0,
+          "ocr_metrics": {
+            "mean_conf": 0.0,
+            "text_len": 0,
+            "token_count": 0,
+            "raw_token_count": 0,
+            "valid_token_count": 0,
+            "valid_ratio": 0.0,
+            "garbage_ratio": 1.0,
+            "density_score": 0.0,
+            "length_score": 0.0,
+            "token_score": 0.0,
+            "ocr_available": false
+          }
+        },
+        "90_recommended_visual": {},
+        "91_recommended_gray": {},
+        "92_recommended_ocr": {}
+      }
+    },
+    {
+      "image": "samples\\1000018709.jpg",
+      "orientation": {
+        "best_angle": 270,
+        "override_reason": "Selected vertical orientation pair (90/270) from heuristic pre-check.",
+        "candidates": [
+          {
+            "angle": 90,
+            "heuristic_score": 84.03800331115723,
+            "ocr_conf": 0.0,
+            "text_len": 0,
+            "used_ocr": false,
+            "final_score": 84.03800331115723
+          },
+          {
+            "angle": 270,
+            "heuristic_score": 85.07298486328125,
+            "ocr_conf": 0.0,
+            "text_len": 0,
+            "used_ocr": false,
+            "final_score": 85.07298486328125
+          }
+        ]
+      },
+      "selected_ocr_branch": "00_original_bgr",
+      "selected_visual_branch": "11_color_strong_scan",
+      "ocr_ranking": [
+        {
+          "branch": "00_original_bgr",
+          "score": 0.0
+        },
+        {
+          "branch": "24_gray_whitened_scan",
+          "score": 0.0
+        },
+        {
+          "branch": "32_bw_shadow_adaptive",
+          "score": 0.0
+        }
+      ],
+      "visual_ranking": [
+        {
+          "branch": "11_color_strong_scan",
+          "score": 22.838562486090105
+        },
+        {
+          "branch": "10_color_natural_scan",
+          "score": 19.421886461445872
+        },
+        {
+          "branch": "00_original_bgr",
+          "score": 19.044682667828447
+        }
+      ],
+      "branch_scores": {
+        "00_original_bgr": {
+          "quick_ocr_score": 20.55744097003723,
+          "ocr_score": 0.0,
+          "ocr_metrics": {
+            "mean_conf": 0.0,
+            "text_len": 0,
+            "token_count": 0,
+            "raw_token_count": 0,
+            "valid_token_count": 0,
+            "valid_ratio": 0.0,
+            "garbage_ratio": 1.0,
+            "density_score": 0.0,
+            "length_score": 0.0,
+            "token_score": 0.0,
+            "ocr_available": false
+          },
+          "visual_score": 19.044682667828447
+        },
+        "10_color_natural_scan": {
+          "visual_score": 19.421886461445872
+        },
+        "11_color_strong_scan": {
+          "visual_score": 22.838562486090105
+        },
+        "20_gray_illumination": {},
+        "22_gray_clahe": {},
+        "24_gray_whitened_scan": {
+          "quick_ocr_score": 22.707945604041225,
+          "ocr_score": 0.0,
+          "ocr_metrics": {
+            "mean_conf": 0.0,
+            "text_len": 0,
+            "token_count": 0,
+            "raw_token_count": 0,
+            "valid_token_count": 0,
+            "valid_ratio": 0.0,
+            "garbage_ratio": 1.0,
+            "density_score": 0.0,
+            "length_score": 0.0,
+            "token_score": 0.0,
+            "ocr_available": false
+          }
+        },
+        "32_bw_shadow_adaptive": {
+          "quick_ocr_score": 44.150583766144834,
+          "ocr_score": 0.0,
+          "ocr_metrics": {
+            "mean_conf": 0.0,
+            "text_len": 0,
+            "token_count": 0,
+            "raw_token_count": 0,
+            "valid_token_count": 0,
+            "valid_ratio": 0.0,
+            "garbage_ratio": 1.0,
+            "density_score": 0.0,
+            "length_score": 0.0,
+            "token_score": 0.0,
+            "ocr_available": false
+          }
+        },
+        "90_recommended_visual": {},
+        "91_recommended_gray": {},
+        "92_recommended_ocr": {}
+      }
+    },
+    {
+      "image": "samples\\1000018712.jpg",
+      "orientation": {
+        "best_angle": 270,
+        "override_reason": "Selected vertical orientation pair (90/270) from heuristic pre-check.",
+        "candidates": [
+          {
+            "angle": 90,
+            "heuristic_score": 107.03154750061034,
+            "ocr_conf": 0.0,
+            "text_len": 0,
+            "used_ocr": false,
+            "final_score": 107.03154750061034
+          },
+          {
+            "angle": 270,
+            "heuristic_score": 107.48602023315429,
+            "ocr_conf": 0.0,
+            "text_len": 0,
+            "used_ocr": false,
+            "final_score": 107.48602023315429
+          }
+        ]
+      },
+      "selected_ocr_branch": "00_original_bgr",
+      "selected_visual_branch": "11_color_strong_scan",
+      "ocr_ranking": [
+        {
+          "branch": "00_original_bgr",
+          "score": 0.0
+        },
+        {
+          "branch": "24_gray_whitened_scan",
+          "score": 0.0
+        },
+        {
+          "branch": "32_bw_shadow_adaptive",
+          "score": 0.0
+        }
+      ],
+      "visual_ranking": [
+        {
+          "branch": "11_color_strong_scan",
+          "score": 21.615132663241116
+        },
+        {
+          "branch": "00_original_bgr",
+          "score": 18.410663990209585
+        },
+        {
+          "branch": "10_color_natural_scan",
+          "score": 18.113169886305535
+        }
+      ],
+      "branch_scores": {
+        "00_original_bgr": {
+          "quick_ocr_score": 19.58703625304888,
+          "ocr_score": 0.0,
+          "ocr_metrics": {
+            "mean_conf": 0.0,
+            "text_len": 0,
+            "token_count": 0,
+            "raw_token_count": 0,
+            "valid_token_count": 0,
+            "valid_ratio": 0.0,
+            "garbage_ratio": 1.0,
+            "density_score": 0.0,
+            "length_score": 0.0,
+            "token_score": 0.0,
+            "ocr_available": false
+          },
+          "visual_score": 18.410663990209585
+        },
+        "10_color_natural_scan": {
+          "visual_score": 18.113169886305535
+        },
+        "11_color_strong_scan": {
+          "visual_score": 21.615132663241116
+        },
+        "20_gray_illumination": {},
+        "22_gray_clahe": {},
+        "24_gray_whitened_scan": {
+          "quick_ocr_score": 21.578122488668317,
+          "ocr_score": 0.0,
+          "ocr_metrics": {
+            "mean_conf": 0.0,
+            "text_len": 0,
+            "token_count": 0,
+            "raw_token_count": 0,
+            "valid_token_count": 0,
+            "valid_ratio": 0.0,
+            "garbage_ratio": 1.0,
+            "density_score": 0.0,
+            "length_score": 0.0,
+            "token_score": 0.0,
+            "ocr_available": false
+          }
+        },
+        "32_bw_shadow_adaptive": {
+          "quick_ocr_score": 42.96506698004261,
+          "ocr_score": 0.0,
+          "ocr_metrics": {
+            "mean_conf": 0.0,
+            "text_len": 0,
+            "token_count": 0,
+            "raw_token_count": 0,
+            "valid_token_count": 0,
+            "valid_ratio": 0.0,
+            "garbage_ratio": 1.0,
+            "density_score": 0.0,
+            "length_score": 0.0,
+            "token_score": 0.0,
+            "ocr_available": false
+          }
+        },
+        "90_recommended_visual": {},
+        "91_recommended_gray": {},
+        "92_recommended_ocr": {}
+      }
+    }
+  ]
+}

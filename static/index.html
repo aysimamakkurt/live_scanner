@@ -142,6 +142,32 @@
       line-height: 1.5;
     }
 
+    .option-list {
+      display: grid;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .option-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 14px;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--text);
+      font-size: 0.95rem;
+    }
+
+    .option-item input {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--accent);
+      margin: 0;
+      flex: 0 0 auto;
+    }
+
     .preview-card {
       margin-bottom: 16px;
     }
@@ -225,7 +251,18 @@
 
     <aside class="capture-panel">
       <h2>Capture Preview</h2>
-      <p>The captured full frame and the warped document result will appear here.</p>
+      <p>The captured full frame, original RGB document, and OCR output will appear here.</p>
+
+      <div class="option-list">
+        <label class="option-item">
+          <input id="orientationToggle" type="checkbox" checked />
+          <span>Auto orientation</span>
+        </label>
+        <label class="option-item">
+          <input id="enhanceToggle" type="checkbox" checked />
+          <span>Enhance document</span>
+        </label>
+      </div>
 
       <div class="preview-card">
         <span>Full frame</span>
@@ -236,10 +273,18 @@
       </div>
 
       <div class="preview-card">
-        <span>Warp result</span>
+        <span>RGB result</span>
         <div class="preview-frame" id="croppedPreview">
           <img id="croppedImage" alt="Cropped detection" />
-          <div class="placeholder">The warped result will appear here when a document is detected.</div>
+          <div class="placeholder">The warped document will appear here in its original RGB form.</div>
+        </div>
+      </div>
+
+      <div class="preview-card">
+        <span>OCR result</span>
+        <div class="preview-frame" id="ocrPreview">
+          <img id="ocrImage" alt="OCR optimized document" />
+          <div class="placeholder">Enhanced OCR output will appear here when enhancement is enabled.</div>
         </div>
       </div>
 
@@ -258,6 +303,10 @@
     const fullFrameImage = document.getElementById("fullFrameImage");
     const croppedPreview = document.getElementById("croppedPreview");
     const croppedImage = document.getElementById("croppedImage");
+    const ocrPreview = document.getElementById("ocrPreview");
+    const ocrImage = document.getElementById("ocrImage");
+    const orientationToggle = document.getElementById("orientationToggle");
+    const enhanceToggle = document.getElementById("enhanceToggle");
 
     let isProcessing = false;
     let lastDetections = [];
@@ -333,6 +382,11 @@
     function setCaptureMessage(message, isError = false) {
       captureNote.textContent = message;
       captureNote.classList.toggle("error", isError);
+    }
+
+    function clearPreviewImage(wrapper, image) {
+      image.removeAttribute("src");
+      wrapper.classList.remove("has-image");
     }
 
     function getBestDetection(detections) {
@@ -422,6 +476,8 @@
 
       const formData = new FormData();
       formData.append("file", captureBlob, "capture.jpg");
+      formData.append("apply_orientation", orientationToggle.checked ? "true" : "false");
+      formData.append("apply_enhance", enhanceToggle.checked ? "true" : "false");
 
       try {
         const response = await fetch("/capture-document", {
@@ -432,7 +488,18 @@
         const data = await response.json();
 
         if (!data.success) {
-          setCaptureMessage(data.error || "Document warp failed.", true);
+          if (data.error_code === "BLURRY_IMAGE" && data.quality) {
+            const laplacian = data.quality.laplacian_score ?? data.quality.blur_score ?? 0;
+            const laplacianThreshold = data.quality.laplacian_threshold ?? data.quality.blur_threshold ?? 0;
+            const tenengrad = data.quality.tenengrad_score ?? 0;
+            const tenengradThreshold = data.quality.tenengrad_threshold ?? 0;
+            setCaptureMessage(
+              `Photo is blurry. Laplacian ${laplacian.toFixed(1)} / ${laplacianThreshold.toFixed(1)}, Tenengrad ${tenengrad.toFixed(1)} / ${tenengradThreshold.toFixed(1)}. Please retake it.`,
+              true
+            );
+          } else {
+            setCaptureMessage(data.error || "Document warp failed.", true);
+          }
           return;
         }
 
@@ -442,9 +509,28 @@
         }
 
         setPreviewImage(croppedPreview, croppedImage, data.warped_image);
-        setCaptureMessage(
-          `Warp created for ${data.detection.label} (${(data.detection.confidence * 100).toFixed(1)}%).`
-        );
+        if (data.enhanced_ocr_image) {
+          setPreviewImage(ocrPreview, ocrImage, data.enhanced_ocr_image);
+        } else {
+          clearPreviewImage(ocrPreview, ocrImage);
+        }
+
+        const messageParts = [
+          `Captured ${data.detection.label} (${(data.detection.confidence * 100).toFixed(1)}%).`,
+          `Laplacian ${data.quality.laplacian_score.toFixed(1)}, Tenengrad ${data.quality.tenengrad_score.toFixed(1)}.`
+        ];
+
+        if (data.orientation) {
+          messageParts.push(`Orientation: ${data.orientation.best_angle}deg.`);
+        }
+
+        if (data.enhancement) {
+          messageParts.push(
+            `OCR branch: ${data.enhancement.selected_ocr_branch}.`
+          );
+        }
+
+        setCaptureMessage(messageParts.join(" "));
       } catch (error) {
         console.error("Capture error:", error);
         setCaptureMessage("A server error occurred during capture.", true);

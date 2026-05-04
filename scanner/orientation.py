@@ -2,7 +2,11 @@ import logging
 import re
 import cv2
 import numpy as np
-import pytesseract
+
+try:
+    import pytesseract
+except ImportError:  # pragma: no cover - environment-dependent fallback
+    pytesseract = None
 
 logger = logging.getLogger(__name__)
 ROTATIONS = {0: None, 90: cv2.ROTATE_90_CLOCKWISE, 180: cv2.ROTATE_180, 270: cv2.ROTATE_90_COUNTERCLOCKWISE}
@@ -29,6 +33,8 @@ def preprocess_for_ocr(img):
 
 def quick_ocr_score(img):
     try:
+        if pytesseract is None:
+            return 0.0, 0
         proc = preprocess_for_ocr(img)
         data = pytesseract.image_to_data(proc, config="--psm 3", output_type=pytesseract.Output.DICT)
         confs, text_len = [], 0
@@ -157,7 +163,7 @@ def auto_orient_document(img):
             "heuristic_score": c["heuristic_score"],
             "ocr_conf": c["ocr_conf"],
             "text_len": c["text_len"],
-            "used_ocr": True,
+            "used_ocr": pytesseract is not None,
             "final_score": c["final_score"],
         } for c in candidates]
     }

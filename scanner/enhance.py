@@ -201,16 +201,13 @@ def whiten_background_preserve_text(gray):
 # MAIN ENHANCEMENT PIPELINE
 # =========================================================
 
-def enhance_document(warped_bgr: np.ndarray) -> dict:
+def enhance_document(warped_bgr: np.ndarray, include_visual: bool = False) -> dict:
     """
     Produce multiple scan-like renderings from a single document image.
 
-    Outputs include:
-    - natural color scan
-    - strong color scan
-    - clean grayscale scan
-    - paper-whitened scan
-    - OCR-friendly black/white outputs
+    Outputs include OCR-oriented document branches.
+    Visual RGB branches are optional and disabled by default so the
+    app can keep the captured document in its original color rendering.
     """
     outputs = {}
 
@@ -231,31 +228,22 @@ def enhance_document(warped_bgr: np.ndarray) -> dict:
 
     base_gray = cv2.cvtColor(color_denoised, cv2.COLOR_BGR2GRAY)
 
-    # -----------------------------------------------------
-    # Stage 2: color scan branches
-    # -----------------------------------------------------
-    # Natural-looking color scan
-    color_natural = enhance_l_channel_in_lab(color_denoised)
-    color_natural = sharpen_color_image(color_natural, sigma=1.0, alpha=1.15, beta=-0.15)
-    outputs["10_color_natural_scan"] = color_natural
+    if include_visual:
+        # Natural-looking color scan
+        color_natural = enhance_l_channel_in_lab(color_denoised)
+        color_natural = sharpen_color_image(color_natural, sigma=1.0, alpha=1.15, beta=-0.15)
+        outputs["10_color_natural_scan"] = color_natural
 
-    # Stronger color document branch
-    color_lab = cv2.cvtColor(color_denoised, cv2.COLOR_BGR2LAB)
-    l, a, b = cv2.split(color_lab)
-    l = normalize_paper_background(l, sigma=41, white_target=235.0)
-    l = contrast_enhancement_clahe(l, clip=2.8, tile=(8, 8))
-    l = sharpen_image(l, sigma=1.0, alpha=1.4, beta=-0.4)
-    color_strong = cv2.cvtColor(cv2.merge([l, a, b]), cv2.COLOR_LAB2BGR)
-    outputs["11_color_strong_scan"] = color_strong
-
-    # -----------------------------------------------------
-    # Stage 3: grayscale scan branches
-    # -----------------------------------------------------
-    gray_illum = illumination_normalization(base_gray, sigma=35, target=185.0)
-    outputs["20_gray_illumination"] = gray_illum
-
-    gray_clahe = contrast_enhancement_clahe(base_gray, clip=2.5, tile=(8, 8))
-    outputs["22_gray_clahe"] = gray_clahe
+        # Balanced color document branch: cleaner than the original,
+        # but intentionally less aggressive than a "scanner filter" look.
+        color_lab = cv2.cvtColor(color_denoised, cv2.COLOR_BGR2LAB)
+        l, a, b = cv2.split(color_lab)
+        l = normalize_paper_background(l, sigma=33, white_target=225.0)
+        l = contrast_enhancement_clahe(l, clip=1.9, tile=(8, 8))
+        l = denoise_document(l, h=6)
+        l = sharpen_image(l, sigma=1.1, alpha=1.18, beta=-0.18)
+        color_strong = cv2.cvtColor(cv2.merge([l, a, b]), cv2.COLOR_LAB2BGR)
+        outputs["11_color_strong_scan"] = color_strong
 
     # Paper-whitened branch: more scanner-like visual output
     gray_white = whiten_background_preserve_text(base_gray)
@@ -273,7 +261,7 @@ def enhance_document(warped_bgr: np.ndarray) -> dict:
     # -----------------------------------------------------
     # Stage 5: recommended outputs
     # -----------------------------------------------------
-    outputs["90_recommended_visual"] = color_natural
+    outputs["90_recommended_visual"] = warped_bgr.copy()
     outputs["91_recommended_gray"] = gray_white
     outputs["92_recommended_ocr"] = bw_shadow
 

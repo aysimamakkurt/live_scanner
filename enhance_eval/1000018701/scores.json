@@ -1,0 +1,120 @@
+{
+  "image": "samples\\1000018701.jpg",
+  "orientation": {
+    "best_angle": 0,
+    "override_reason": "Preferred 0 degrees because 180-degree score advantage was too small.",
+    "candidates": [
+      {
+        "angle": 0,
+        "heuristic_score": 158.06198654174804,
+        "ocr_conf": 0.0,
+        "text_len": 0,
+        "used_ocr": false,
+        "final_score": 158.06198654174804
+      },
+      {
+        "angle": 180,
+        "heuristic_score": 158.97622900390624,
+        "ocr_conf": 0.0,
+        "text_len": 0,
+        "used_ocr": false,
+        "final_score": 158.97622900390624
+      }
+    ]
+  },
+  "selected_ocr_branch": "00_original_bgr",
+  "selected_visual_branch": "11_color_strong_scan",
+  "ocr_ranking": [
+    {
+      "branch": "00_original_bgr",
+      "score": 0.0
+    },
+    {
+      "branch": "24_gray_whitened_scan",
+      "score": 0.0
+    },
+    {
+      "branch": "32_bw_shadow_adaptive",
+      "score": 0.0
+    }
+  ],
+  "visual_ranking": [
+    {
+      "branch": "11_color_strong_scan",
+      "score": 23.94934869254475
+    },
+    {
+      "branch": "00_original_bgr",
+      "score": 21.645343435778067
+    },
+    {
+      "branch": "10_color_natural_scan",
+      "score": 20.44677943653164
+    }
+  ],
+  "branch_scores": {
+    "00_original_bgr": {
+      "quick_ocr_score": 24.263860994113674,
+      "ocr_score": 0.0,
+      "ocr_metrics": {
+        "mean_conf": 0.0,
+        "text_len": 0,
+        "token_count": 0,
+        "raw_token_count": 0,
+        "valid_token_count": 0,
+        "valid_ratio": 0.0,
+        "garbage_ratio": 1.0,
+        "density_score": 0.0,
+        "length_score": 0.0,
+        "token_score": 0.0,
+        "ocr_available": false
+      },
+      "visual_score": 21.645343435778067
+    },
+    "10_color_natural_scan": {
+      "visual_score": 20.44677943653164
+    },
+    "11_color_strong_scan": {
+      "visual_score": 23.94934869254475
+    },
+    "20_gray_illumination": {},
+    "22_gray_clahe": {},
+    "24_gray_whitened_scan": {
+      "quick_ocr_score": 26.805685633184858,
+      "ocr_score": 0.0,
+      "ocr_metrics": {
+        "mean_conf": 0.0,
+        "text_len": 0,
+        "token_count": 0,
+        "raw_token_count": 0,
+        "valid_token_count": 0,
+        "valid_ratio": 0.0,
+        "garbage_ratio": 1.0,
+        "density_score": 0.0,
+        "length_score": 0.0,
+        "token_score": 0.0,
+        "ocr_available": false
+      }
+    },
+    "32_bw_shadow_adaptive": {
+      "quick_ocr_score": 41.90166024181565,
+      "ocr_score": 0.0,
+      "ocr_metrics": {
+        "mean_conf": 0.0,
+        "text_len": 0,
+        "token_count": 0,
+        "raw_token_count": 0,
+        "valid_token_count": 0,
+        "valid_ratio": 0.0,
+        "garbage_ratio": 1.0,
+        "density_score": 0.0,
+        "length_score": 0.0,
+        "token_score": 0.0,
+        "ocr_available": false
+      }
+    },
+    "90_recommended_visual": {},
+    "91_recommended_gray": {},
+    "92_recommended_ocr": {}
+  }
+}

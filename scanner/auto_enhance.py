@@ -1,7 +1,11 @@
 import cv2
 import numpy as np
-import pytesseract
 import re
+
+try:
+    import pytesseract
+except ImportError:  # pragma: no cover - environment-dependent fallback
+    pytesseract = None
 
 
 OCR_CANDIDATE_BRANCHES = [
@@ -76,9 +80,10 @@ def quick_visual_score(img) -> float:
     sharpness_score = np.log1p(max(lap_var, 0.0))
     contrast_score = 0.25 * stddev
     exposure_penalty = abs(mean_val - 190.0) / 35.0
-    saturation_bonus = min(sat_mean / 40.0, 2.5)
+    saturation_bonus = min(sat_mean / 65.0, 1.1)
+    saturation_penalty = max(sat_mean - 70.0, 0.0) / 45.0
 
-    return sharpness_score + contrast_score + saturation_bonus - exposure_penalty
+    return sharpness_score + contrast_score + saturation_bonus - exposure_penalty - saturation_penalty
 
 
 def is_valid_ocr_token(token: str) -> bool:
@@ -103,6 +108,21 @@ def is_valid_ocr_token(token: str) -> bool:
 
 def ocr_readability_score(img):
     try:
+        if pytesseract is None:
+            return 0.0, {
+                "mean_conf": 0.0,
+                "text_len": 0,
+                "token_count": 0,
+                "raw_token_count": 0,
+                "valid_token_count": 0,
+                "valid_ratio": 0.0,
+                "garbage_ratio": 1.0,
+                "density_score": 0.0,
+                "length_score": 0.0,
+                "token_score": 0.0,
+                "ocr_available": False,
+            }
+
         proc = _prepare_for_tesseract(img)
         if proc is None:
             return 0.0, {
@@ -113,6 +133,9 @@ def ocr_readability_score(img):
                 "valid_ratio": 0.0,
                 "garbage_ratio": 1.0,
                 "density_score": 0.0,
+                "length_score": 0.0,
+                "token_score": 0.0,
+                "ocr_available": pytesseract is not None,
             }
 
         data = pytesseract.image_to_data(
@@ -182,6 +205,7 @@ def ocr_readability_score(img):
             "density_score": density_score,
             "length_score": float(length_score),
             "token_score": float(token_score),
+            "ocr_available": True,
         }
 
     except Exception:
@@ -196,6 +220,7 @@ def ocr_readability_score(img):
             "density_score": 0.0,
             "length_score": 0.0,
             "token_score": 0.0,
+            "ocr_available": pytesseract is not None,
         }
 
 
@@ -217,6 +242,8 @@ def auto_select_enhance(enhance_outputs: dict):
     for branch in shortlisted_branches:
         img = enhance_outputs[branch]
         score, metrics = ocr_readability_score(img)
+        if not metrics.get("ocr_available", True):
+            score = quick_branch_score(img)
 
         debug[branch] = {
             "score": score,
@@ -244,25 +271,15 @@ def auto_select_enhance(enhance_outputs: dict):
             best_branch = original_branch
             best_score = original_score
 
-    visual_rankings = []
-    for branch in VISUAL_CANDIDATE_BRANCHES:
-        if branch not in enhance_outputs:
-            continue
-        visual_rankings.append((quick_visual_score(enhance_outputs[branch]), branch))
-
-    visual_rankings.sort(reverse=True)
-    visual_branch = visual_rankings[0][1] if visual_rankings else original_branch
-
     return {
         "ocr_image": enhance_outputs[best_branch],
-        "visual_image": enhance_outputs.get(visual_branch, enhance_outputs[best_branch]),
+        "visual_image": enhance_outputs[original_branch],
     }, {
         "selected_ocr_branch": best_branch,
-        "selected_visual_branch": visual_branch,
+        "selected_visual_branch": original_branch,
         "visual_scores": {
-            branch: float(score)
-            for score, branch in visual_rankings
-        },
+            original_branch: float(quick_visual_score(enhance_outputs[original_branch]))
+        } if original_branch in enhance_outputs else {},
         "scores": debug,
     }
 

@@ -18,7 +18,7 @@ def get_largest_contour(mask_uint8):
     return max(contours, key=cv2.contourArea)
 
 
-def choose_best_mask_from_results(results, w, h):
+def _choose_best_mask_from_results(results, w, h):
     if results[0].masks is None or len(results[0].masks.data) == 0:
         return None
 
@@ -35,18 +35,18 @@ def choose_best_mask_from_results(results, w, h):
     return best_mask
 
 
-def run_yolo_segmentation(model, img, lock=None):
+def run_yolo_segmentation(model, img, lock=None, conf=0.35, return_results=False):
     h, w = img.shape[:2]
 
     if lock is not None:
         with lock:
-            results = model(img, verbose=False)
+            results = model(img, conf=conf, verbose=False)
     else:
-        results = model(img, verbose=False)
-    best_mask = choose_best_mask_from_results(results, w, h)
+        results = model(img, conf=conf, verbose=False)
+    best_mask = _choose_best_mask_from_results(results, w, h)
 
     if best_mask is None:
-        return None
+        return (None, results) if return_results else None
 
     cleaned_mask = clean_mask(best_mask)
-    return cleaned_mask
+    return (cleaned_mask, results) if return_results else cleaned_mask
